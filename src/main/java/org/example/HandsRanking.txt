@@ -1,0 +1,12 @@
+The following list ranks the possible Poker hands from most powerful to least powerful when deciding the winner of a Poker round.
+
+0) Royal Flush - 10 to Ace of the Same Suit
+1) Straight Flush (not royal) - consecutive cards in the same suit
+2) Four of a Kind - four of the same cards
+3) Full House - three of a kind with a pair - Possible implementation later: hand with the highest of the three cards wins
+4) Flush - five cards all of the same suit - Possible implementation later: highest card in the flush wins
+5) Straight - consecutive cards not of the same suit, Ace can serve as highest card (after king) or lowest card (before 2)
+6) Three of a Kind - three cards of the same kind
+7) Two Pair - two sets of cards of the same kind
+8) Pair - two cards of the same kind
+9) High Card / none of the above - goes off of the highest card in the hand

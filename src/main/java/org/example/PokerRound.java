@@ -13,6 +13,7 @@ public class PokerRound {
     private ArrayList<Integer> winners;
     private int winningRank;
     private boolean foundWinner;
+    private ArrayList<Player> players = new ArrayList<Player>();
 
     public PokerRound(int n) {
         poker1 = new Poker();
@@ -24,7 +25,7 @@ public class PokerRound {
         for (int q = 0; q < numPlayers; q++) {
             Player myPlayer = new Player(poker1.getHand());
             analyzeDeck(myPlayer);
-            Player.getPlayers().add(myPlayer);
+            players.add(myPlayer);
             findWinners();
         }
     }
@@ -43,7 +44,7 @@ public class PokerRound {
     private void findWinners() {
         int i = 0;
         while (!foundWinner && i < NUM_OF_HANDS) {
-            for (Player p : Player.getPlayers()) {
+            for (Player p : players) {
                 if (p.getPlayerWinnings(i) == true) {
                     winners.add(p.getID());
                     foundWinner = true;
@@ -56,6 +57,14 @@ public class PokerRound {
         if (!foundWinner) {
             i = 9;
         }
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public Player getPlayerFromID(int i) {
+        return players.get(i);
     }
 
     public ArrayList<Integer> getWinners() {
